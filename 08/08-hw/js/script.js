@@ -103,19 +103,14 @@ window.addEventListener('DOMContentLoaded', function(){
 			let elem = document.querySelector(href);
 			let scrollTarget = elem.offsetTop - 100;
 
-			console.log('href: ' + href);
-			console.log('elem: ' + elem);
-			console.log('scrollTarget: ' + scrollTarget);
 
 			let currentPos = window.pageYOffset;
 
-			console.log('currentPos: ' + currentPos);
 
 			let fps = 50; // 50 кадров в секунду 
 
 			var timer = setInterval(function() { 
 				if (currentPos == scrollTarget){
-					console.log('equal');
 					clearInterval(timer);
 					return;
 				} else {
@@ -127,11 +122,11 @@ window.addEventListener('DOMContentLoaded', function(){
 						window.scrollTo(0, currentPos);
 					}
 				} 			
-			}, 1000 / fps);
+			}, 10 / fps);
 		});
-
 	}
 
 	scrollToMenu('js-menu');
+
 });
 
